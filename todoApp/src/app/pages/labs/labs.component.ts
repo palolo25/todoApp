@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-labs',
@@ -29,6 +28,7 @@ export class LabsComponent {
 
   clickHandler() {
     alert('Hola que tal')
+    
   }
 
   changeHandler(event: Event) {

@@ -7,7 +7,6 @@
         <input
           class="new-todo"
           placeholder="Type new todo"
-          autofocus
           type="text"
         />
       </div>
@@ -20,15 +19,15 @@
             <div class="view">
               <input class="toggle" type="checkbox" checked />
               <label>Learn JavaScript</label>
-              <button class="destroy"></button>
+              <button class="destroy">destroy</button>
             </div>
             <input class="edit" value="Learn JavaScript" />
           </li>
           <li>
             <div class="view">
-              <input class="toggle" type="checkbox" />
-              <label>Buy a unicorn</label>
-              <button class="destroy"></button>
+              <input id="buy-and-unicorn" class="toggle" type="checkbox" />
+              <label for="buy-and-unicorn">Buy a unicorn</label>
+              <button class="destroy">destroy</button>
             </div>
             <input class="edit" value="Buy a unicorn" />
           </li>
@@ -36,7 +35,7 @@
             <div class="view">
               <input class="toggle" type="checkbox" />
               <label>Make dishes</label>
-              <button class="destroy"></button>
+              <button class="destroy">destroy</button>
             </div>
             <input class="edit" value="Make dishes" />
           </li>
