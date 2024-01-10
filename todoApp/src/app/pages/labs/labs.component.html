@@ -9,7 +9,7 @@
   <hr />
   <h2>{{ "Hola ".repeat(4) }}</h2>
   <p>La suma de 3 + 3 es: {{ 3 + 3 }}</p>
-  <p>Hola soy {{ name }} y mi edad es {{ age }}</p>
+  <p>Hola soy {{ name() }} y mi edad es {{ age }}</p>
   <hr />
   <img [src]="person.avatar" alt="Imagen de una avatar sin cara" />
   <input type="number" [value]="person.age" />
@@ -20,4 +20,22 @@
   <button (dblclick)="clickHandler()">double me</button>
   <p>(change)</p>
   <input type="number" [value]="person.age" (change)="changeHandler($event)" />
+  <p>(keydown)</p>
+  <input type="text" [value]="person.name" (keydown)="changeHandler($event)" />
+  <p>(keydown con shift)</p>
+  <input type="text" [value]="person.name" (keydown.shift.t)="changeHandler($event)" />
+  <hr>
+  
+  <h2>Signals</h2>
+  <input type="text" [value]="name()" (keydown)="changeHandler($event)" />
+  <p>name: {{name()}}</p>
+<hr>
+<h2>Array con ngFor</h2>
+<ul>
+  <p>total: {{tasks().length}}</p>
+  <li *ngFor="let task of tasks(); index as i">
+   {{ i }} {{ task }}
+  </li>
+</ul>
+
 </div>

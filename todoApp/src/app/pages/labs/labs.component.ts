@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-labs',
@@ -8,13 +8,13 @@ import { Component } from '@angular/core';
 export class LabsComponent {
   title = 'todo-app';
   welcome = 'Bienvenido a mi primera aplicación con Angular';
-  tasks = [
+  tasks = signal([
     'Instalar Angular CLI',
     'Crear proyecto',
     'Crear componente',
     'Crear servicio',
-  ];
-  name = 'Pablo'
+  ]);
+  name = signal('Pablo')
   age = 22
   disabled = true
   img = 'https://w3schools.com/howto/img_avatar.png';
@@ -32,6 +32,13 @@ export class LabsComponent {
   }
 
   changeHandler(event: Event) {
-    console.log(event);
+    const input = event.target as HTMLInputElement;
+    const newValue = input.value;
+    this.name.set(newValue)
+  }
+
+  keydownHandler(event: KeyboardEvent){
+    const input = event.target as HTMLInputElement;
+    console.log(input.value)
   }
 }

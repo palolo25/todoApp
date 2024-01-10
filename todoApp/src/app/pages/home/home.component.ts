@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -9,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  tasks = signal([
+    'Instalar Angular CLI',
+    'Crear proyecto',
+    'Crear componente',
+    'Crear servicio',
+  ]);
 }
