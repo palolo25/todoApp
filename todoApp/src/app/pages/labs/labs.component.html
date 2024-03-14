@@ -32,10 +32,12 @@
 <hr>
 <h2>Array con ngFor</h2>
 <ul>
-  <p>total: {{tasks().length}}</p>
+  <p>total: {{tasks()}}</p>
   <li *ngFor="let task of tasks(); index as i">
    {{ i }} {{ task }}
   </li>
 </ul>
+
+<button (click)="mostrar()">Hola buenas tardes por la mañana</button>
 
 </div>

@@ -41,4 +41,13 @@ export class LabsComponent {
     const input = event.target as HTMLInputElement;
     console.log(input.value)
   }
+
+ mostrar(){
+   let titulo = document.getElementById('titulo')
+   if (titulo) {
+    titulo.innerHTML += '<br/> Buenas tardes por la mañana';
+} else {
+    console.log("No se encontró el elemento con la ID 'titulo'");
+}
+ }
 }
