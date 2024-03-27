@@ -17,27 +17,30 @@
   <p>person: {{ person.name }}</p>
   <hr />
   <button (click)="clickHandler()">click me</button>
+  <br>
   <button (dblclick)="clickHandler()">double me</button>
   <p>(change)</p>
   <input type="number" [value]="person.age" (change)="changeHandler($event)" />
   <p>(keydown)</p>
   <input type="text" [value]="person.name" (keydown)="changeHandler($event)" />
   <p>(keydown con shift)</p>
-  <input type="text" [value]="person.name" (keydown.shift.t)="changeHandler($event)" />
-  <hr>
-  
+  <input
+    type="text"
+    [value]="person.name"
+    (keydown.shift.t)="changeHandler($event)"
+  />
+  <hr />
+
   <h2>Signals</h2>
   <input type="text" [value]="name()" (keydown)="changeHandler($event)" />
-  <p>name: {{name()}}</p>
-<hr>
-<h2>Array con ngFor</h2>
-<ul>
-  <p>total: {{tasks()}}</p>
-  <li *ngFor="let task of tasks(); index as i">
-   {{ i }} {{ task }}
-  </li>
-</ul>
+  <p>name: {{ name() }}</p>
+  <hr />
+  <h2>Array con ngFor</h2>
+  <ul>
+    <p>total: {{ tasks() }}</p>
+    <li *ngFor="let task of tasks(); index as i">{{ i }} {{ task }}</li>
+  </ul>
 
-<button (click)="mostrar()">Hola buenas tardes por la mañana</button>
-
+  <button (click)="mostrar()">Hola buenas tardes por la mañana</button>
+  <p id="titulo">{{ mensaje }}</p>
 </div>

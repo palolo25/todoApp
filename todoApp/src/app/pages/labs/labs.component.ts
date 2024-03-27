@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-labs',
   templateUrl: './labs.component.html',
@@ -28,7 +28,7 @@ export class LabsComponent {
 
   clickHandler() {
     alert('Hola que tal')
-    
+
   }
 
   changeHandler(event: Event) {
@@ -37,17 +37,15 @@ export class LabsComponent {
     this.name.set(newValue)
   }
 
-  keydownHandler(event: KeyboardEvent){
+  keydownHandler(event: KeyboardEvent) {
     const input = event.target as HTMLInputElement;
     console.log(input.value)
   }
 
- mostrar(){
-   let titulo = document.getElementById('titulo')
-   if (titulo) {
-    titulo.innerHTML += '<br/> Buenas tardes por la mañana';
-} else {
-    console.log("No se encontró el elemento con la ID 'titulo'");
-}
- }
+
+  mensaje: string = ''
+
+  mostrar() {
+    this.mensaje = '¡Hola, buenas dias por la tarde!';
+  }
 }
